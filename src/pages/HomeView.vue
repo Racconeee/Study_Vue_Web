@@ -1,17 +1,20 @@
 <template>
-  <div class="q-pa-md" style="max-width: 350px">
-    <q-list bordered separator>
-      <q-item clickable v-ripple :to="{ name: 'admin' }">
-        <q-item-section>Single line item</q-item-section>
-      </q-item>
-    </q-list>
-
-    <div>asd s</div>
-    <div>asd asd</div>
+  <div class="item-centers row q-pa-md">
+    <TestList :items="items"></TestList>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import TestList from "src/components/Test/TestList.vue";
+const items = Array.from(Array(20), (_, index) => ({
+  id: "A" + index,
+  title: index + "번째 Test",
+  view: 0,
+  Thumbnail: "Page",
+  uid: "uid",
+  category: "카테고리" + index,
+}));
+</script>
 
 <style lang="scss" scoped>
 /* 스타일 코드가 여기에 들어갑니다. */
