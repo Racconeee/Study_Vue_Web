@@ -1,55 +1,33 @@
 <template>
   <div class="bg-teal-2" :style="{ height: '100vh' }">
-    <div class="flex flex-center text-h4 q-pa-lg q-mb-xl">3/12</div>
-
+    <!-- <div>{{ $route.params.id }}</div> -->
+    <!-- <div>{{ route }}</div> -->
+    <!-- {{ quizList }} -->
     <div>
-      <section class="flex flex-center">
-        <q-card :style="{ width: '80vw' }">
-          <q-card-section> hahaha </q-card-section>
-        </q-card>
-      </section>
-      <div class="q-ma-md flex flex-center column">
-        <div class="q-pa-md q-gutter-sm">
-          <q-btn
-            align="around"
-            class="btn-fixed-width"
-            color="brown-5"
-            label="
-          adsfasdfasd
-          fasdfasdfasdf
-          asdfasfdasdf
-          Align around"
-            icon="lightbulb_outline"
-          />
-        </div>
-        <div class="q-pa-md q-gutter-sm">
-          <q-btn
-            align="around"
-            class="btn-fixed-width"
-            color="brown-5"
-            label="Ali
-          adsfasdfasd
-          fasdfasdfasdf
-          asdfasfdasdf
-          Align aroundgn around"
-            icon="lightbulb_outline"
-          />
-        </div>
-        <div class="q-pa-md q-gutter-sm">
-          <q-btn
-            align="around"
-            class="btn-fixed-width"
-            color="brown-5"
-            label="Ali
-          Align aroundgn around"
-            icon="lightbulb_outline"
-          />
-        </div>
-      </div>
+      <QuizChoice :items="quizList"></QuizChoice>
     </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import QuizChoice from "@/pages/quiz/components/QuizChoice.vue";
+import { useRoute } from "vue-router";
+import { onMounted } from "vue";
+import { storeToRefs } from "pinia";
+import { useTestStore } from "@/stores/useTestStore";
+
+const testStore = useTestStore();
+
+const { fetchQuizList } = testStore;
+const { quizList } = storeToRefs(testStore);
+
+const route = useRoute();
+
+onMounted(() => {
+  fetchQuizList(route.params.id);
+  console.log("quizList");
+  console.log(quizList);
+});
+</script>
 
 <style></style>

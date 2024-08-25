@@ -2,7 +2,7 @@
   <q-item
     clickable
     v-ripple
-    :to="`/quiz/${id}`"
+    :to="`/quiz/${test_id}`"
     class="flex flex-center q-mt-sm"
   >
     <q-item-section
@@ -15,34 +15,28 @@
         width="100px"
         fit="cover"
       />
-      <div>{{ title }}</div>
-      <div>{{ content }}</div>
+      <div>{{ testName }}</div>
+      <div>조회수 : {{ views }}</div>
     </q-item-section>
   </q-item>
 </template>
 
 <script setup>
 defineProps({
-  id: {
-    type: String,
+  test_id: {
+    type: Number,
   },
-  title: {
-    type: String,
-  },
-  content: {
-    type: String,
-  },
-  view: {
+  views: {
     type: Number,
     default: 0,
   },
-  uuid: {
+  testName: {
     type: String,
   },
-  Thumbnail: {
+  filepath: {
     type: String,
   },
-  category: {
+  filedownload: {
     type: String,
   },
 });

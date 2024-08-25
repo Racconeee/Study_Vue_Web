@@ -3,41 +3,31 @@
     <q-header bordered class="bg-white text-grey-9">
       <q-toolbar>
         <q-btn flat dense to="/home">
-          <q-avatar class="q-ma-sm q-mr-md">
-            <img src="/Study_FE/public/images/Thumbnail.png" />
+          <q-avatar rounded class="q-ma-sm q-mr-md">
+            <img src="/images/logo.png" />
           </q-avatar>
           <q-toolbar-title class="text-weight-bolder h1">
-            피카츄
+            Racconworld
           </q-toolbar-title>
         </q-btn>
       </q-toolbar>
+
+      <q-separator color="orange" inset />
       <template class="flex justify-between">
         <q-btn
           class="text-weight-bolder"
           stretch
           flat
-          label="Home"
-          to="/home"
+          label="Top"
+          to="/test/top"
         />
+        <q-btn class="text-weight-bolder" stretch flat label="??" to="/home" />
+        <q-btn class="text-weight-bolder" stretch flat label="??" to="/test" />
         <q-btn
           class="text-weight-bolder"
           stretch
           flat
-          label="수강하기"
-          to="/home"
-        />
-        <q-btn
-          class="text-weight-bolder"
-          stretch
-          flat
-          label="온라인 강의 "
-          to="/home"
-        />
-        <q-btn
-          class="text-weight-bolder"
-          stretch
-          flat
-          label="유튜브"
+          label="About"
           to="/home"
         />
       </template>
@@ -49,9 +39,8 @@
 
     <q-footer elevated class="bg-teal-6">
       <q-toolbar>
-        <q-toolbar-title>asdas dasda sdas </q-toolbar-title>
+        <q-toolbar-title>Copyright@racconworld.com</q-toolbar-title>
       </q-toolbar>
-      <div>asd</div>
     </q-footer>
   </q-layout>
 </template>

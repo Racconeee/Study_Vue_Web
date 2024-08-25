@@ -1,3 +1,5 @@
+const path = require("path"); // path 모듈을 불러옵니다.
+
 /* eslint-env node */
 
 /*
@@ -43,7 +45,6 @@ module.exports = configure(function (/* ctx */) {
         browser: ["es2019", "edge88", "firefox78", "chrome87", "safari13.1"],
         node: "node20",
       },
-
       vueRouterMode: "history", // available values: 'hash', 'history'
       // vueRouterBase,
       // vueDevtools,
@@ -62,7 +63,9 @@ module.exports = configure(function (/* ctx */) {
 
       // extendViteConf (viteConf) {},
       // viteVuePluginOptions: {},
-
+      alias: {
+        "@": path.resolve(__dirname, "./src"),
+      },
       vitePlugins: [
         [
           "vite-plugin-checker",

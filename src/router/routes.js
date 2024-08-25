@@ -14,7 +14,7 @@ const routes = [
     ],
   },
   {
-    path: "/Test/top",
+    path: "/test/top",
     component: () => import("pages/TestTopView.vue"),
   },
   {
